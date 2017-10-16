@@ -8,6 +8,9 @@ https://aka.ms/abs-node-luis
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var path = require('path');
+google = require('google'); //code added by Harsha Ganipineni
+
+
 
 var useEmulator = (process.env.NODE_ENV == 'development');
 
@@ -165,8 +168,33 @@ intents.matches('Greetings', [
     
 intents.matches('None', [
     function (session, args) {
-       session.send('Sorry, I did not understand \'%s\'.', session.message.text); //Commented by Harsha Ganipineni
-        
+       //session.send('Sorry, I did not understand \'%s\'.', session.message.text); //Commented by Harsha Ganipineni
+       //The following code is added by Harsha Ganipineni
+       google.resultsPerPage = 5; //No of pages that needs to be displayed
+       var nextCounter = 0  //Constant
+       
+       google(session.message.text, (err, res) =>
+       {
+             if (err) console.error(err);
+             let searchResults = [];
+       
+             for (var i = 0; i < 5; ++i)
+             {
+               var link = res.links[i];
+               searchResults.push({
+                   title : link.title,
+                   link : link.href,
+                   description : link.description
+               })
+             }
+       
+             console.log(searchResults);
+             session.send(searchResults);
+       }); 
+
+
+
+
        }
     ]);    
     
