@@ -191,7 +191,7 @@ intents.matches('None', [
              }
        
              console.log(searchResults);
-             session.send(searchResults);
+             session.send('Google Results' + searchResults);
        }); 
 
 
