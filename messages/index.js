@@ -8,7 +8,7 @@ https://aka.ms/abs-node-luis
 var builder = require("botbuilder");
 var botbuilder_azure = require("botbuilder-azure");
 var path = require('path');
-google = require('google'); //code added by Harsha Ganipineni
+const  google = require('google'); //code added by Harsha Ganipineni
 
 
 
