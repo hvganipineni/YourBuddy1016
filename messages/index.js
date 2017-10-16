@@ -162,6 +162,7 @@ intents.matches('Joke', [
     
 intents.matches('Greetings', [
     function (session, args) {
+        console.log('i AM IN GREETINGS');
         session.send('Hello, ' + session.message.user.name + '. How can I help you today?');
             }
     ]);   
@@ -170,6 +171,7 @@ intents.matches('None', [
     function (session, args) {
        //session.send('Sorry, I did not understand \'%s\'.', session.message.text); //Commented by Harsha Ganipineni
        //The following code is added by Harsha Ganipineni
+       console.log('i AM IN GOOGLE');
        google.resultsPerPage = 5; //No of pages that needs to be displayed
        var nextCounter = 0  //Constant
        
