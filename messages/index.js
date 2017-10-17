@@ -183,18 +183,10 @@ intents.matches('None', [
              for (var i = 0; i < 5; ++i)
              {
                var link = res.links[i];
-            //    searchResults.push({
-            //        title : link.title,
-            //        link : link.href,
-            //        description : link.description
-            //    })
-            session.send('Link title# '+link.title +'<br/> link Url ' + link.href );
-
+             session.send('I couldnt understand what you are looking for. I am routing you to the google. Following are your top 5 google responses. );
+             session.send('Google Result '+i+ '<br/> Link title# '+link.title +'<br/> link Url ' + link.href );
              }
        
-           //  console.log(searchResults);
-           //  session.send('Google Results' + searchResults  );
-          //   session.
        }); 
 
 
