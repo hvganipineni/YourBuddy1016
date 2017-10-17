@@ -172,6 +172,7 @@ intents.matches('None', [
        //session.send('Sorry, I did not understand \'%s\'.', session.message.text); //Commented by Harsha Ganipineni
        //The following code is added by Harsha Ganipineni
        console.log('i AM IN GOOGLE');
+       session.send('I couldnt understand what you are looking for. I am routing you to the google. Following are your top 5 google responses.' );
        google.resultsPerPage = 5; //No of pages that needs to be displayed
        var nextCounter = 0  //Constant
        
@@ -183,18 +184,13 @@ intents.matches('None', [
              for (var i = 0; i < 5; ++i)
              {
                var link = res.links[i];
-             session.send('I couldnt understand what you are looking for. I am routing you to the google. Following are your top 5 google responses.' );
-             session.send('Google Result '+i+ '<br/> Link title# '+link.title +'<br/> link Url ' + link.href );
+              session.send('Google Result :->'+i+ '<br/> Link title# '+link.title +'<br/> link Url ' + link.href );
              }
        
        }); 
-
-
-
-
        }
     ]);    
-    
+   
 intents.matches('Projects', [
     function (session, args)  {
         //session.send('Hi1');
