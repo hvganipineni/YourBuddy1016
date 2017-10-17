@@ -183,15 +183,18 @@ intents.matches('None', [
              for (var i = 0; i < 5; ++i)
              {
                var link = res.links[i];
-               searchResults.push({
-                   title : link.title,
-                   link : link.href,
-                   description : link.description
-               })
+            //    searchResults.push({
+            //        title : link.title,
+            //        link : link.href,
+            //        description : link.description
+            //    })
+            session.send('Link title# '+link.title +'<br/> link Url ' + link.href );
+
              }
        
              console.log(searchResults);
-             session.send('Google Results' + searchResults);
+             session.send('Google Results' + searchResults  );
+             session.
        }); 
 
 
