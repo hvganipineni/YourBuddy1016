@@ -192,9 +192,9 @@ intents.matches('None', [
 
              }
        
-             console.log(searchResults);
-             session.send('Google Results' + searchResults  );
-             session.
+           //  console.log(searchResults);
+           //  session.send('Google Results' + searchResults  );
+          //   session.
        }); 
 
 
